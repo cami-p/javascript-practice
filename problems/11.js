@@ -8,7 +8,28 @@
  * @example "racecar" -> true
 */
 function problem(str) {
-    return null;
+    let s = str.toLowerCase();
+    let base = s.split('').filter(function(char) {
+        if (char != ' ') {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    let half;
+    if (str.length % 2 == 0) {
+        half = (str.length / 2) - 1;
+    } else {
+        half = (str.length / 2) - 1.5;
+    }
+    console.log(base)
+    if (base.length % 2 == 0 && base.slice(0, half+1) == base.slice(half, base.length -1).reverse()) {
+        return true
+    } else if (base.length % 2 != 0 && base.slice(0, half+1) == base.slice(half+2, base.length -1).reverse()) {
+        return true
+    } else {
+        return false
+    }
 }
 
 const tests = [

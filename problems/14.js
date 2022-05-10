@@ -7,7 +7,19 @@
  * @example [3,2,3] -> 3
 */
 function problem(numbers) {
-    return null;
+    let counter = {};
+    for (const element of numbers) {
+        if (element in counter) {
+            counter[element] += 1;
+        } else {
+            counter[element] = 1;
+        }
+    }
+    for (const num in counter) {
+        if (counter[num] >= numbers.length / 2) {
+            return parseInt(num);
+        }
+    }
 }
 
 const tests = [

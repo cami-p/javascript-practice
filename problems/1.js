@@ -10,11 +10,12 @@
 function problem(str) {
     
     // TODO: Convert this to an arrow function
+    const getLastLetter = (word) => word.charAt(word.length - 1);
     // TODO: Fix the bug inside the function
-    function getLastLetter(word) {
+    /*function getLastLetter(word) {
         return word.charAt(word.length)
     }
-    
+    */
     return getLastLetter(str);
 }
 

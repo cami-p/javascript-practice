@@ -7,7 +7,16 @@
  * @example [{name: "Chase", grade: 89}, {name: "Raman", grade: 92}, {name: "Peter", grade: 100}] -> ["Peter", "Raman"]
 */
 function problem(students) {
-    return null;
+    const aboveNinety = students.filter(function(student) {
+        return student['grade'] >= 90;
+    });
+    const sortedNinety = aboveNinety.sort(function(a, b) {
+        return a['name'].localeCompare(b['name']);
+    });
+    const names = sortedNinety.map(function(students) {
+        return students['name'];
+    });
+    return names;
 }
 
 const tests = [
