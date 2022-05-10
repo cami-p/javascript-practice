@@ -17,19 +17,32 @@ function problem(str) {
         }
     });
     let half;
-    if (str.length % 2 == 0) {
-        half = (str.length / 2) - 1;
+    if (base.length % 2 == 0) {
+        half = (base.length / 2) - 1;
     } else {
-        half = (str.length / 2) - 1.5;
+        half = (base.length / 2) - 0.5;
     }
-    console.log(base)
-    if (base.length % 2 == 0 && base.slice(0, half+1) == base.slice(half, base.length -1).reverse()) {
-        return true
-    } else if (base.length % 2 != 0 && base.slice(0, half+1) == base.slice(half+2, base.length -1).reverse()) {
-        return true
-    } else {
-        return false
+    // console.log(base)
+    // console.log(half)
+    const a = base.slice(0, half + 1);
+    const b = base.slice(half, base.length).reverse();
+    // console.log(a, b)
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] != b[i]) {
+            return false;
+        }
     }
+    return true;
+
+    // if (base.length % 2 == 0 && base.slice(0, half) === base.slice(half, base.length).reverse()) {
+    //     console.log(base.slice(0, half))
+    //     return true
+    // } else if (base.length % 2 != 0 && (base.slice(0, half + 1) === base.slice(half, base.length).reverse())) {
+    //     console.log(base.slice(0, half + 1))
+    //     return true
+    // } else {
+    //     return false
+    // }
 }
 
 const tests = [
